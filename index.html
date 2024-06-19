@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" href="data:">
+<title>QRリンクリーダー</title>
+</head><body>
+<h1>QRリンクリーダー</h1>
+<script type="module" src="https://code4fukui.github.io/qr-code-reader/qr-code-reader.js"></script>
+<qr-code-reader id=qrr></qr-code-reader><br>
+<button id=btn>stop</button>
+
+<br><br>
+<a href=https://github.com/code4fukui/qrlink-reader/>src on GitHub</a>
+
+<script type="module">
+qrr.oninput = (s) => {
+  qrr.stop();
+  location.href = s.data;
+};
+btn.onclick = () => qrr.stop();
+</script>
+
+<style>
+body {
+  font-family: sans-serif;
+  text-align: center;
+}
+a {
+  color: gray !important;
+}
+</style>
